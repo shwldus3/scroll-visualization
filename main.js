@@ -1,4 +1,4 @@
-import { scroller } from "./lib/d3-scroller.js";
+import { scroller } from "./lib/scroller.js";
 import { PieChart } from "./charts/pie_chart.js";
 import { MultiLineChart } from "./charts/multiline_chart.js";
 import {
@@ -98,8 +98,8 @@ async function draw3() {
     .attr("viewBox", [-WIDTH / 2, -HEIGHT / 2, WIDTH, HEIGHT]);
 
   // const data = [
-  //   { name: "멤버 작사 참여 비율", value: 82.5 },
-  //   { name: "멤버 작사 비참여 비율", value: 17.5 },
+  //   { name: "멤버 작사 참여 비율", value: 92.5 },
+  //   { name: "멤버 작사 비참여 비율", value: 7.5 },
   // ];
   const data = await getBtsWriteRatioData();
   const dataKey = "멤버 작사 참여 비율";
@@ -131,7 +131,7 @@ const activationFunctions = [
 ];
 
 
-const scroll = scroller().container(d3.select("#graphic"));
+const scroll = scroller().container();
 scroll();
 
 let lastIndex,
